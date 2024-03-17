@@ -42,7 +42,7 @@ app.get("/gym/:id", async (req, res) => {
     const findTravelersByID = await gymModel.findOne({ ChallengeID: id });
     // if user not found
     if (!findTravelersByID) {
-      return res.json({ message: "Traveler not found" });
+      return res.json({ message: "Challenge not found" });
     }
     res.send(findTravelersByID);
   } catch (error) {
