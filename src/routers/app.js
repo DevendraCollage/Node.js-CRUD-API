@@ -43,7 +43,7 @@ app.get("/gym/:id", async (req, res) => {
 
     // if user not found
     if (!findTravelersByID) {
-      return res.json({ message: "Traveler not found" });
+      return res.json({ message: "Challenge not found" });
     }
     // if find then give the response
     res.send(findTravelersByID);
