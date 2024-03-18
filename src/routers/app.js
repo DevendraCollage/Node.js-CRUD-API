@@ -39,11 +39,13 @@ app.get("/gym", async (req, res) => {
 app.get("/gym/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const findTravelersByID = await gymModel.findOne({ ChallengeID: id });
+    const findTravelersByID = await gymModel.findOne({ ChallengeID: id }); // This will find the object by my id not with an object id
+
     // if user not found
     if (!findTravelersByID) {
-      return res.json({ message: "Traveler not found" });
+      return res.json({ message: "Fitness Challenge not found" });
     }
+    // if find then give the response
     res.send(findTravelersByID);
   } catch (error) {
     res.status(500).json({ message: error.message });
